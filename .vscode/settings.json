@@ -1,0 +1,5 @@
+{
+    "python.createEnvironment.contentButton": "show",
+    "python.globalModuleInstallation": false,
+    "scm.alwaysShowRepositories": false
+}

@@ -1,16 +1,14 @@
 
 import sys
 import os
-
-
-sys.path.insert(0,os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from pipelines import reddit_pipeline
+sys.path.insert(0,os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from pipelines.reddit_pipeline import reddit_pipeline
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime
 default_args={
     'owner': 'Nikhil Kudupudi',
-    'start_date': datetime(2025,4,22)
+    'start_date': datetime(2025,5,10)
 }
 
 file_postfix=datetime.now().strftime("%Y%m%d")
@@ -18,7 +16,7 @@ file_postfix=datetime.now().strftime("%Y%m%d")
 dag=DAG(
     dag_id="etl_reddit_pipeline",
     default_args=default_args,
-    schedule_interval='@daily',
+ 
     catchup=False,
     tags=['reddit','etl','pipeline']
 )
@@ -32,7 +30,8 @@ extract=PythonOperator(
         'subreddit': 'dataengineering',
         'time_filter':'day',
         'limit':100
-    }
+    },
+    dag=dag
 )
 
 

@@ -1,4 +1,4 @@
-FROM apache/airflow:3.0.0
+FROM apache/airflow:latest
 
 COPY requirements.txt /opt/airflow
 

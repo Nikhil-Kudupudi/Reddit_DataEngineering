@@ -17,7 +17,7 @@ def extract_posts(reddit_instance:Reddit,subreddit:str,time_filter:str,limit=Non
         subreddit=reddit_instance.subreddit(subreddit)
         posts=subreddit.top(time_filter=time_filter,limit=limit)
         post_lists=[]
-        
+        print("posts extracted successfully")
         print(posts)
     except Exception as e:
         raise Exception(e)

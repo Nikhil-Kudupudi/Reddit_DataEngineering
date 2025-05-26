@@ -31,3 +31,16 @@ AWS_BUCKET_NAME = parser.get('aws', 'aws_bucket_name')
 BATCH_SIZE = parser.getint('etl_settings', 'batch_size')
 ERROR_HANDLING = parser.get('etl_settings', 'error_handling')
 LOG_LEVEL = parser.get('etl_settings', 'log_level')
+POST_FIELDS = (
+    'id',
+    'title',
+    'score',
+    'num_comments',
+    'author',
+    'created_utc',
+    'url',
+    'over_18',
+    'edited',
+    'spoiler',
+    'stickied'
+)

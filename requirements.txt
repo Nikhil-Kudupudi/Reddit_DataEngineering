@@ -2,3 +2,5 @@ pandas
 numpy 
 praw
 apache-airflow
+awscli
+s3fs
